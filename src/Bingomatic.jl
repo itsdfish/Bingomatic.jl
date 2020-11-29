@@ -42,6 +42,7 @@ module Bingomatic
         return scatter(x[:,1], x[:,2], markersize=0, xlims=(min_x,max_x), ylims=(min_x,max_x),
             series_annotations = text.(w_list[:], :center, word_size), label = false, grid=true,
             gridstyle=:solid, gridlinewidth=1.5, gridalpha=1, xticks=ticks, yticks=ticks,
-            xaxis=font(0), yaxis=font(0), xlabel="", ylabel="", frame_style=:box; kwargs...)
+            xaxis=font(0), yaxis=font(0), xlabel="", ylabel="", frame_style=:box, size=(400,400);
+            kwargs...)
     end
 end
