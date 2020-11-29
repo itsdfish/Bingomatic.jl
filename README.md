@@ -4,9 +4,9 @@ Bingomatic™ is an awesome Julia package that creates bingo cards, using state-
 
 ## Standard Bingo Card
 
-A standard sized bingo card can be made in a few lines of code, as shown below.
+A standard size bingo card can be made with a few lines of code, as shown below.
 ```julia
-using Revise, Bingomatic, Random
+using Bingomatic, Random
 Random.seed!(780775)
 word_pool = map(_->randstring(4), 1:50)
 words = sample_words(word_pool)
