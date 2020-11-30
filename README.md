@@ -27,12 +27,12 @@ card = make_card(words; size=(300,300))
 ```
 <img src="extras/example2.png" alt="" width="300" height="300">
 
-## Halmark Christmas Bingo
+## Christmas Movie Bingo
 
-Bingomatic™ includes a bonus word pool for Halmark Christmas Bingo, a $19.99 value, absolutely free! Variations of this coveted game include screaming each time the [secret word](https://www.youtube.com/watch?v=gxMZgeBlqzQ) "Christmas" is said. 
+Bingomatic™ includes a bonus word pool for Christmas Movie Bingo, a $19.99 value, absolutely free! Variations of this coveted game include a tribute to the [secret word](https://www.youtube.com/watch?v=gxMZgeBlqzQ) from Pee Wee's Playhouse where players scream each time the word "Christmas" is said.  
 
 ```julia 
-using Bingomatic, Random
+using Bingomatic, CSV, DataFrames, Random
 Random.seed!(1225)
 pkg_path = dirname(pathof(Bingomatic))
 path = joinpath(pkg_path,"../extras/word_pool.csv")
