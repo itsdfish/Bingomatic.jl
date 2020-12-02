@@ -1,7 +1,7 @@
 name = "Bingomatic"
 uuid = "5d0f211d-823e-4d77-a844-586f1e6d1e5a"
 authors = ["itsdfish <itsdfish@gmail.com> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
