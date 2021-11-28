@@ -36,9 +36,8 @@ using Bingomatic, CSV, DataFrames, Random
 Random.seed!(1225)
 pkg_path = dirname(pathof(Bingomatic))
 path = joinpath(pkg_path,"../extras/word_pool.csv")
-word_pool = CSV.read(path, DataFrame)
-
-words = sample_words(word_pool.words)
+word_pool = CSV.read(path, DataFrame; stringtype=String)
+words = sample_words(word_pool.words) 
 card = make_card(words; word_size=11, size=(630,630))
 ```
 <img src="extras/christmas_bingo.png" alt="" width="630" height="630">

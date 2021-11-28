@@ -9,5 +9,5 @@ using Test
     words = sample_words(word_list, n_rows, n_rows)
     @test size(words) == (n_rows,n_rows)
     @test words[5] == "Free Space"
-    #card = make_card(labels)
+    card = make_card(words)
 end

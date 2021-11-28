@@ -38,7 +38,7 @@ module Bingomatic
         scale = range(min_x+offset, max_x-offset, length=n_rows)
         x = [[i j] for i in scale for j in scale] |> x->vcat(x...)
         pyplot()
-        w_list = map(x->TextWrap.wrap(x, width=line_width, break_long_words=break_words), list)
+        w_list = map(x -> TextWrap.wrap(x, width=line_width, break_long_words=break_words), list)
         return scatter(x[:,1], x[:,2], markersize=0, xlims=(min_x,max_x), ylims=(min_x,max_x),
             series_annotations = text.(w_list[:], :center, word_size), label = false, grid=true,
             gridstyle=:solid, gridlinewidth=1.5, gridalpha=1, xticks=ticks, yticks=ticks,
