@@ -36,8 +36,7 @@ module Bingomatic
         length(list) < n_cells ? error("labels must have more elements than cells") : nothing
         ticks = range(min_x, max_x, length=n_rows+1)
         scale = range(min_x+offset, max_x-offset, length=n_rows)
-        x = [[i j] for i in scale for j in scale] |> x->vcat(x...)
-        pyplot()
+        x = [[i j] for i in scale for j in scale] |> x -> vcat(x...)
         w_list = map(x -> TextWrap.wrap(x, width=line_width, break_long_words=break_words), list)
         return scatter(x[:,1], x[:,2], markersize=0, xlims=(min_x,max_x), ylims=(min_x,max_x),
             series_annotations = text.(w_list[:], :center, word_size), label = false, grid=true,
