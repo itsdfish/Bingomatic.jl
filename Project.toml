@@ -14,7 +14,7 @@ TextWrap = "b718987f-49a8-5099-9789-dcd902bef87d"
 [compat]
 Plots = "v1.9.1"
 PyPlot = "v2.9.0"
-SafeTestsets = "v0.0.1"
+SafeTestsets = "v0.0.1, 0.1"
 StatsBase = "v0.33.2, 0.34"
 TextWrap = "v1.0.1"
 julia = "1"
