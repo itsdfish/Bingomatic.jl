@@ -2,6 +2,17 @@
 
 Bingomatic™ is an awesome Julia package that creates bingo cards, using state-of-the-art bingo technology.
 
+## Installation
+
+To install Bingomatic, switch to packge mode by entering `]` in the REPL and enter:
+```julia
+add Bingomatic
+```
+Alternatively, enter the following into the REPL:
+```julia
+using Pkg; Pkg.add("Bingomatic")
+```
+
 ## Standard Bingo Card
 
 A standard size bingo card can be made with a few lines of code, as shown below.
