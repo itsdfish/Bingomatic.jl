@@ -2,6 +2,8 @@ using Bingomatic
 using Test
 
 @testset "Bingomatic.jl" begin
+    using Plots
+    
     @test_throws ErrorException sample_words(["a","b"], 2)
     @test_throws ErrorException sample_words(["a", "b", "c"], 4)
     n_rows = 3
