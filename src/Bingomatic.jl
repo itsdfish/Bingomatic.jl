@@ -1,12 +1,26 @@
 module Bingomatic
-    using Plots, StatsBase, TextWrap
-    export make_card, sample_words, savefig
 
+    using Plots
+    using StatsBase
+    using TextWrap
+
+    export make_card
+    export sample_words
+    export savefig
 
     """
-    * `word_pool`: a list of words 
-    * `n`: the dimensions of the sampled words
-    * `free_space`: sets center cell to "Free Space" if true
+        sample_words(word_pool, n...=(5,5)...; free_space=true)
+
+    Sample words from word pool.   
+
+    # Arguments 
+
+    - `word_pool`: a list of words 
+    - `n`: the dimensions of the sampled words
+
+    # Keywords 
+
+    - `free_space`: sets center cell to "Free Space" if true
     """
     function sample_words(word_pool, n...=(5,5)...; free_space=true)
         n_cells = prod(n)
@@ -19,14 +33,24 @@ module Bingomatic
     end
 
     """
-    * `labels`: an array containing bingo words
-    * `n_rows`: the number of rows and columns in each bingo card
-    * `word_size`: the size of words in points
-    * `line_width`: the number of characters per line for each word or phrase
-    * `break_words`: break long words when wrapping words
-    * `kwargs`: variable keyword arguments to pass to the `plot` function
+        make_card(list; word_size=12, line_width=8, break_words=false, kwargs...)
+
+    Make bingo card 
+
+    # Arguments
+
+    - `list`: an array containing bingo words
+
+    # Keywords
+    
+    - `backend=pyplot`: plotting backend.
+    - `word_size`: the size of words in points
+    - `line_width`: the number of characters per line for each word or phrase
+    - `break_words`: break long words when wrapping words
+    - `kwargs`: variable keyword arguments to pass to the `plot` function
     """
-    function make_card(list; word_size=12, line_width=8, break_words=false, kwargs...)
+    function make_card(list; backend=pyplot, word_size=12, line_width=8, break_words=false, kwargs...)
+        backend()
         min_x = 0
         max_x = 2
         n_rows = size(list, 1)
